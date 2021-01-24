@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ntsoa-Nyr-aina-Musique{% endblock %}
+
+{% block body %}
+<div class="card" style="width: 18rem;" my-3>
+  
+  <div class="card-body">
+    
+    {{ form_start(form) }}
+    {{ form_widget(form, {'attr' : {'required': false}}) }}
+
+    <button class="btn btn-primary">Rechercher</button>
+{{ form_end(form) }}
+  </div>
+</div><br>
+
+    {% for sound in sounds %}
+    <div class="my-5 p-3 bg-white rounded shadow-sm">
+    <h4 class="border-bottom border-gray pb-2 mb-0"><span class="badge badge-primary"><img src="/images/ios7-play.png" alt="Image" width="30">Titre : </span><img src="/images/mic-a.png" alt="Image" width="30">{{ sound.titre }}</h4>
+    <div class="media text-muted pt-3">
+      <img src="/images/ios7-musical-note.png" alt="Image" width="40">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">Artiste : {{ sound.artiste }}</strong>
+        Genre : {{ sound.genre }}
+        </p>
+    
+    </div>
+    {% for audio in sound.audios %}
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark"><span class="badge badge-primary">@morceau</span></strong>
+        <audio  src="{{ '/uploads/' ~ audio.name }}" controls></audio>
+        </p>
+        
+    </div>
+    <p>Envoyer vos avis sur cette chanson sur <a href="https://web.facebook.com/andriamiarintsoaniraina/">Facebook</a></p>
+    {% endfor %}
+    
+  {% endfor %}
+
+    
+{{ include("partials/footer.html.twig") }}
+{% endblock %}

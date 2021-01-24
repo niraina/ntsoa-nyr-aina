@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Sounds{% endblock %}
+
+{% block body %}
+    <h1>Edit Sounds</h1>
+
+    {{ include('sounds/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('sounds_new') }}">back to list</a>
+
+    {{ include('sounds/_delete_form.html.twig') }}
+{{ include("partials/footer.html.twig") }}
+{% endblock %}

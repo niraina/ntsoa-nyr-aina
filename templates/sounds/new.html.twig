@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ntsoa-Nyr-aina-Musique{% endblock %}
+
+{% block body %}
+    <h1>Create new Sounds</h1>
+
+    {{ include('sounds/_form.html.twig') }}
+
+    <a href="{{ path('sounds_new') }}">back to list</a>
+<table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Artiste</th>
+                <th>Genre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sound in sounds %}
+            <tr>
+                <td>{{ sound.id }}</td>
+                <td>{{ sound.titre }}</td>
+                <td>{{ sound.artiste }}</td>
+                <td>{{ sound.genre }}</td>
+                <td>
+                    <a href="{{ path('sounds_show', {'id': sound.id}) }}">show</a>
+                    <a href="{{ path('sounds_edit', {'id': sound.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

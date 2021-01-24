@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Ntsoa-Nyr-aina-Musique{% endblock %}</title>
+        {% block stylesheets %}
+        {# <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"> #}
+        <link rel="stylesheet" type="text/css" href="/js/rs-plugin/css/settings.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/css/isotope.css" media="screen">
+        <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+        <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700">
+
+        <link rel="stylesheet" href="/css/style.css">
+  <!-- skin -->
+        <link rel="stylesheet" href="/skin/default.css">
+        {% endblock %}
+    </head>
+    <body>
+<section id="header" class="appear"></section>
+  <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(5, 42, 62, 1);">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      	  <span class="fa fa-bars color-white"></span>
+        </button>
+        <div class="navbar-logo">
+          
+        </div>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/sounds">Sounds</a></li>
+        </ul>
+      </div>
+      <!--/.navbar-collapse -->
+    </div>
+  </div>
+    <section id="intro">
+    <div class="intro-content">
+      <h2>Bienvenu(Tongasoa)</h2>
+      <h3></h3><br><br>
+      <div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- services -->
+  
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+   
+    
+</html>

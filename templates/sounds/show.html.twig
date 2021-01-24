@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ntsoa-Nyr-aina-Musique{% endblock %}
+
+{% block body %}
+    <h1>Sounds</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sound.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ sound.titre }}</td>
+            </tr>
+            <tr>
+                <th>Artiste</th>
+                <td>{{ sound.artiste }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ sound.genre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('sounds_index') }}">back to list</a>
+
+    <a href="{{ path('sounds_edit', {'id': sound.id}) }}">edit</a>
+
+    {{ include('sounds/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    {# Verifier si la route est edit
+    {% if app.request.attributes.get('_route') == 'sounds_edit' %}
+        <h2>Audio</h2>
+        {% for audio in sound.audios %}
+            <div>
+                <img src="{{ asset('/uploads/' ~ audio.name) }}" alt="Image" width="150">
+                <a href="{{ path ('sounds_delete_audio', {'id': audio.id}) }}">
+            </div>
+        {%endfor %}
+        
+    {% endif %}
+    #}
+    <button class="btn">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}
